@@ -1,0 +1,40 @@
+Here's a step-by-step guide on how to install Apache HTTP Server on Ubuntu in AWS console:
+
+Step 1: Launch an EC2 Instance
+- Sign in to your AWS Management Console.
+- Go to the EC2 Dashboard and click on "Launch Instance" to launch a new EC2 instance.
+- Select an Ubuntu Server AMI of your choice and proceed with the configuration and launch process.
+- Choose the desired instance type, configure security groups, and follow the prompts to create the instance. Make sure to allow incoming traffic on port 80 (HTTP) in the security group.
+
+Step 2: Connect to the Instance
+- Once the instance is launched, select the instance in the EC2 dashboard and click on "Connect" to get the connection details.
+- Follow the instructions to connect to your EC2 instance using SSH. You can use tools like PuTTY (for Windows) or Terminal (for macOS/Linux).
+
+Step 3: Update System Packages
+- Once you are connected to your EC2 instance, update the package lists and upgrade existing packages by running the following commands:
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Step 4: Install Apache Server
+- To install Apache, run the following command:
+```
+sudo apt install apache2
+```
+- During the installation process, you may be prompted to confirm the installation. Type "Y" and press Enter to proceed.
+
+Step 5: Start Apache Service
+- After the installation is complete, Apache should start automatically. You can verify the status of the Apache service by running:
+```
+sudo systemctl status apache2
+```
+- If the service is not running, start it manually using the following command:
+```
+sudo systemctl start apache2
+```
+
+Step 6: Access Apache Default Page
+- Open a web browser and enter the public IP address or public DNS of your EC2 instance. You should see the default Apache welcome page, confirming that the installation was successful.
+
+Congratulations! You have successfully installed Apache HTTP Server on your Ubuntu instance in AWS console. You can now configure Apache to serve your website or web application as needed.
