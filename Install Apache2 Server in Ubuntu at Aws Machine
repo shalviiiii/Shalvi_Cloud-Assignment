@@ -1,0 +1,45 @@
+How to install Apache server in Ubuntu in AWS Console step by step:
+
+1. Launch an EC2 instance running Ubuntu.
+2. Connect to your EC2 instance using SSH.
+3. Update the system packages.
+```
+sudo apt update
+sudo apt upgrade
+```
+4. Install Apache.
+```
+sudo apt install apache2
+```
+5. Start the Apache service.
+```
+sudo systemctl start apache2
+```
+6. Verify the installation by accessing the server in your browser.
+```
+http://<your-instance-public-DNS-name>
+```
+
+Here are the detailed instructions for each step:
+
+1. To launch an EC2 instance running Ubuntu, go to the AWS Console and select the EC2 service. Click on the Launch Instance button and select the Ubuntu AMI. You can also choose to launch a pre-configured AMI that includes Apache.
+2. Once the instance is launched, you can connect to it using SSH. You can find the public DNS name of your instance in the EC2 console. To connect to the instance, open a terminal and run the following command:
+```
+ssh -i <your-key-pair-file> ec2-user@<your-instance-public-DNS-name>
+```
+3. To update the system packages, run the following commands:
+```
+sudo apt update
+sudo apt upgrade
+```
+4. To install Apache, run the following command:
+```
+sudo apt install apache2
+```
+5. To start the Apache service, run the following command:
+```
+sudo systemctl start apache2
+```
+6. To verify the installation, open a web browser and navigate to the public DNS name of your instance. You should see the default Apache page.
+
+That's it! You have now successfully installed Apache server in Ubuntu in AWS Console.
